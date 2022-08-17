@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:despesas_pessoais/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 import 'components/transaction_form.dart';
@@ -14,6 +16,31 @@ class ExpensesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyHomePage(),
+      theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+              .copyWith(secondary: Colors.amber),
+          fontFamily: 'Quicksand',
+          appBarTheme: AppBarTheme(
+              titleTextStyle: ThemeData.light()
+                  .textTheme
+                  .copyWith(
+                    titleLarge: const TextStyle(
+                      fontFamily: 'OpenSans',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    titleMedium: const TextStyle(
+                      fontFamily: 'OpenSans',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    titleSmall: const TextStyle(
+                      fontFamily: 'OpenSans',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  )
+                  .headline6)),
     );
   }
 }
@@ -26,9 +53,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _transactions = [
-    Transaction(id: 't1', title: 'Novo tenis de corrida', value: 310.76, date: DateTime.now()),
-    Transaction(id: 't2', title: 'Conta de luz', value: 211.30, date: DateTime.now()),
+  final List<Transaction> _transactions = [
+    // Transaction(id: 't1', title: 'Novo tenis de corrida', value: 310.76, date: DateTime.now()),
+    // Transaction(id: 't2', title: 'Conta de luz', value: 211.30, date: DateTime.now()),
   ];
 
   _addTransaction(String title, double value) {
