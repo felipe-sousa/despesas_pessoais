@@ -38,7 +38,7 @@ class Chart extends StatelessWidget {
       margin: EdgeInsets.all(20),
       child: Row(
         children: groupedTransactions.map((tr) {
-          return ChartBar(label: tr['day'].toString(), value: tr['value'], percentage: 0);
+          return ChartBar(label: tr['day'].toString(), value: tr['value'], percentage: 0.30);
         }).toList(),
       ),
     );
