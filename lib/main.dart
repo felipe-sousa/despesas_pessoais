@@ -20,6 +20,7 @@ class ExpensesApp extends StatelessWidget {
       theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
               .copyWith(secondary: Colors.amber),
+          primaryColor: Colors.purple,
           fontFamily: 'Quicksand',
           appBarTheme: AppBarTheme(
               titleTextStyle: ThemeData.light()
@@ -72,6 +73,18 @@ class _MyHomePageState extends State<MyHomePage> {
       title: 'Conta de luz',
       value: 211.30,
       date: DateTime.now().subtract(Duration(days: 5)),
+    ),
+    Transaction(
+      id: 't3',
+      title: 'Cartao de Credito',
+      value: 125000.00,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't4',
+      title: 'Lanche',
+      value: 12.99,
+      date: DateTime.now(),
     ),
   ];
 
