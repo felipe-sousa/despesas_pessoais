@@ -15,12 +15,12 @@ class TransactionList extends StatelessWidget {
       child: transactions.isEmpty
           ? Column(
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   'Nenhuma transação cadastrada!',
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 Container(
                   height: 200,
                   child: Image.asset(
@@ -36,7 +36,7 @@ class TransactionList extends StatelessWidget {
                 final tr = transactions[index];
                 return Card(
                   elevation: 5,
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                  margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
@@ -44,7 +44,10 @@ class TransactionList extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(6.0),
                         child: FittedBox(
-                          child: Text('R\$${tr.value.toStringAsFixed(2)}'),
+                          child: Text(
+                            'R\$${tr.value.toStringAsFixed(2)}',
+                            style: const TextStyle(fontWeight: FontWeight.w700),
+                          ),
                         ),
                       ),
                     ),
